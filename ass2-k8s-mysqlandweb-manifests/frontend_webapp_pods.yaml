@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ass2-webapp-pod
+  namespace: ass2
+  labels:
+    app: employees
+
+spec:
+  containers:
+  - name: ass2-webapp-container
+    image: 034644060220.dkr.ecr.us-east-1.amazonaws.com/assignment2-images-repo:Ass2webapp-v0.1
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    env:
+    - name: DBHOST
+      value: "ass2-mysql-service.ass2.svc.cluster.local"
+    - name: DBUSER
+      value: "root"
+    - name: DBPWD
+      value: "Ass2Password"
+    - name: DBPORT
+      value: "3306"

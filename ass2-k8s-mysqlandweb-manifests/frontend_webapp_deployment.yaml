@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels:
+    app: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: app
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        image: 015937355141.dkr.ecr.us-east-1.amazonaws.com/mywebapp:v1.0
+        env:
+        - name: DBPORT
+          value: "3306"
+        - name: DBPWD
+          value: "mypwd"
+        - name: DBHOST
+          value: "mysql.mharoon.svc.cluster.local"
+        - name: DBUSER
+          value: "root"
