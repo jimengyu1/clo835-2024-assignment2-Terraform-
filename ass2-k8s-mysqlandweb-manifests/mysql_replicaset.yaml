@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ass2-mysql-replicaset
+  namespace: ass2
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: ass2-mysql-container
+        image: 034644060220.dkr.ecr.us-east-1.amazonaws.com/assignment2-images-repo:Ass2-mysql-image-v0.1
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "Ass2Password"
+        ports:
+        - containerPort: 3306
+          protocol: TCP
