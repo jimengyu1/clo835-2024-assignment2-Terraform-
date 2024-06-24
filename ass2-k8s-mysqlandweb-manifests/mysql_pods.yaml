@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -16,3 +17,7 @@ spec:
     env:
     - name: MYSQL_ROOT_PASSWORD
       value: "Ass2Password"
+=======
+apiVersion: apps/v1
+kind: Deployment
+>>>>>>> f53efa404df6cfcebf5e86b6856360fb66cfeb29

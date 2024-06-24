@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+<<<<<<< HEAD
 metadata:
   name: ass2-mysql-deployment
   namespace: ass2
@@ -24,3 +25,5 @@ spec:
         ports:
         - containerPort: 3306
           protocol: TCP
+=======
+>>>>>>> f53efa404df6cfcebf5e86b6856360fb66cfeb29

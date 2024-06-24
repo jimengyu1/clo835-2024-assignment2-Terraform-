@@ -1,4 +1,5 @@
 apiVersion: apps/v1
+<<<<<<< HEAD
 kind: ReplicaSet
 metadata:
   name: ass2-mysql-replicaset
@@ -24,3 +25,6 @@ spec:
         ports:
         - containerPort: 3306
           protocol: TCP
+=======
+kind: Deployment
+>>>>>>> f53efa404df6cfcebf5e86b6856360fb66cfeb29
