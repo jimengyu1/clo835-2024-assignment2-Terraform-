@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: ass2-webapp-deployment
+  namespace: ass2-web
   labels:
-    app: webserver
+    app: employees
 spec:
   replicas: 1
   selector:
@@ -21,11 +22,11 @@ spec:
           protocol: TCP
         image: 015937355141.dkr.ecr.us-east-1.amazonaws.com/mywebapp:v1.0
         env:
-        - name: DBPORT
-          value: "3306"
-        - name: DBPWD
-          value: "mypwd"
         - name: DBHOST
-          value: "mysql.mharoon.svc.cluster.local"
+          value: "ass2-mysql-service.ass2.svc.cluster.local"
         - name: DBUSER
           value: "root"
+        - name: DBPWD
+          value: "Ass2Password"
+        - name: DBPORT
+          value: "3306"
